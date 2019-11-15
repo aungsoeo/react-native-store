@@ -28,6 +28,8 @@ export default class Welcome extends React.Component {
     if(this.state.fontLoaded){
       return (
         <View style={welcomeStyle.container}>
+          <View style={{ flex:1}}></View>
+
           <View style={welcomeStyle.WelcomeContainer}>
             <Image style={welcomeStyle.linnlogo} source={require("../assets/images/linnlogo.png")} />
             <Text style={[welcomeStyle.greeting, welcomeStyle.greeting1]}>မင်္ဂလာပါ</Text>
@@ -39,14 +41,20 @@ export default class Welcome extends React.Component {
               Electronic ပစ္စည်းများကို ကျွန်တော်တို့၏ Linn IT & Mobile Store မှ
               ဝယ်ယူရရှိနိုင်ပါတယ်။
             </Text>
+            <View style={welcomeStyle.imgView}>
+              <TouchableOpacity
+                onPress={() => navigate("Category")}
+              >
+                <Image style={welcomeStyle.img} source={require("../assets/icons/right-arrow.png")} />
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={welcomeStyle.imgView}>
-            <TouchableOpacity
-              onPress={() => navigate("Category")}
-            >
-              <Image style={welcomeStyle.img} source={require("../assets/icons/arrow.png")} />
-            </TouchableOpacity>
+          <View style={welcomeStyle.footer}>
+            <Text style={[welcomeStyle.greeting, welcomeStyle.footerText]}>
+              Code with <Image source={require("../assets/icons/heart.png")} /> By Linn Dev House
+            </Text>
           </View>
+        
         </View>
       );
     }else{

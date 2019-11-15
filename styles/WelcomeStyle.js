@@ -11,7 +11,7 @@ export default welcomeStyle = StyleSheet.create({
         padding:30,
       },
       linnlogo:{
-        margin:30
+        margin:20
       },
       greeting: {
         color: "white"
@@ -35,12 +35,22 @@ export default welcomeStyle = StyleSheet.create({
       imgView:{
         flexDirection:'row',
         justifyContent:'flex-end',
-        paddingRight:30
+        paddingRight:10
       },
       img:{
         height:30,
         width:30,
         // backgroundColor:'#fff'
+      },
+      footer:{
+        height:200,
+        flexDirection:'column-reverse',
+        alignItems:'center'
+      },
+      footerText:{
+        fontSize: 14,
+        marginBottom: 10,
+        fontFamily:'Pyidaungsu-Regular'
       }
 });
 

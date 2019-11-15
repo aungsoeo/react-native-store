@@ -289,7 +289,7 @@ export default class ItemList extends React.Component {
       headerTitleStyle: {
         color: "white",
         width: "80%",
-        textAlign: "center"
+        textAlign: "center",
       },
       headerTintColor: "white"
     };
@@ -309,7 +309,9 @@ export default class ItemList extends React.Component {
       "Linn-Medium": require("../assets/fonts/linn/Linn-Caracas-Medium.otf"),
       "Linn-Regular": require("../assets/fonts/linn/Linn-Caracas.otf")
     });
-    //api fetch will go here
+
+
+    //api fetch data will go here
     
 
     if (this.props.navigation.getParam("catId") == 1) {

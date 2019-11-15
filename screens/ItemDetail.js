@@ -61,10 +61,10 @@ export default class ItemDetail extends React.Component {
                 </View>
                 <View style={detailStyle.box1}>
                     <Text style={[detailStyle.text, detailStyle.productPrice]}>
-                    Price - {navigation.getParam("productPrice", "")}{" "}
+                    Price - {navigation.getParam("productPrice", "")}
                     </Text>
                     <Text style={[detailStyle.text, detailStyle.productDesc]}>
-                    {navigation.getParam("productDesc", "")}{" "}
+                    {navigation.getParam("productDesc", "")}
                     </Text>
 
                     <View style={detailStyle.shopLocView}>
