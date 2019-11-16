@@ -313,22 +313,18 @@ export default class ItemList extends React.Component {
       });
     }else if(this.props.navigation.getParam("catId") == 2){
         this.setState({
-  
             productListArr: samsung
           });
     }else if(this.props.navigation.getParam("catId") == 3){
         this.setState({
-  
             productListArr: huawei
           });
     }else if(this.props.navigation.getParam("catId") == 4){
         this.setState({
-  
             productListArr: xiaomi
           });
     }else{
         this.setState({
-  
             productListArr:[]
         })
     }
