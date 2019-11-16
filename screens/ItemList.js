@@ -4,7 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  ActivityIndicator,
+  RefreshControl,
   FlatList
 } from "react-native";
 
@@ -289,7 +289,8 @@ export default class ItemList extends React.Component {
         color: "white",
         width: "80%",
         textAlign: "center",
-        fontFamily: "Linn-Regular"
+        fontFamily: "Linn-Regular",
+        fontWeight:'300'
       },
       headerTintColor: "white"
     };
@@ -299,6 +300,7 @@ export default class ItemList extends React.Component {
     super(props);
     this.state = {
       productListArr: [],
+      refreshing: true,
     };
   }
 
@@ -309,26 +311,36 @@ export default class ItemList extends React.Component {
 
     if (this.props.navigation.getParam("catId") == 1) {
       this.setState({
+        refreshing:false,
         productListArr: apple
       });
     }else if(this.props.navigation.getParam("catId") == 2){
         this.setState({
-            productListArr: samsung
+          refreshing:false,  
+          productListArr: samsung
           });
     }else if(this.props.navigation.getParam("catId") == 3){
         this.setState({
-            productListArr: huawei
+          refreshing:false,  
+          productListArr: huawei
           });
     }else if(this.props.navigation.getParam("catId") == 4){
         this.setState({
-            productListArr: xiaomi
+          refreshing:false,  
+          productListArr: xiaomi
           });
     }else{
         this.setState({
-            productListArr:[]
+          refreshing:false,  
+          productListArr:[]
         })
     }
   }
+
+  onRefresh = () => {
+    this.setState({ productListArr: [] });
+    this.componentDidMount();
+  };
 
   // seperate list wiht line
   FlatListItemsSeperator = () => {
@@ -354,6 +366,7 @@ export default class ItemList extends React.Component {
             showsVerticalScrollIndicator={false}
             data={this.state.productListArr}
             ItemSeparatorComponent={this.FlatListItemsSeperator}
+            enableEmptySection={true}
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() =>
@@ -378,6 +391,12 @@ export default class ItemList extends React.Component {
               </TouchableOpacity>
             )}
             keyExtractor={(item, index) => index.toString()}
+            refreshControl={
+              <RefreshControl
+                refreshing={this.state.refreshing}
+                onRefresh={this.onRefresh.bind(this)}
+              />
+            }
           />
         </View>
       );

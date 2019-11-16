@@ -22,7 +22,8 @@ export default class ItemDetail extends React.Component {
         color: "white",
         width: "80%",
         textAlign: "center",
-        fontFamily: "Linn-Regular"
+        fontFamily: "Linn-Regular",
+        fontWeight:'300'
       },
       headerTintColor: "white"
     };

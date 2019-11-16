@@ -41,7 +41,8 @@ const RouteConfigs = {
                 color:'white',
                 width:'80%',
                 textAlign:'center',
-                fontFamily: "Linn-Regular"
+                fontFamily: "Linn-Regular",
+                fontWeight:'300'
             },
             headerTintColor:"white"
         }) 
@@ -63,7 +64,8 @@ const RouteConfigs = {
                 color:'white',
                 width:'80%',
                 textAlign:'center',
-                fontFamily: "Linn-Regular"
+                fontFamily: "Linn-Regular",
+                fontWeight:'300'
                 
             },
             headerTintColor:"white"

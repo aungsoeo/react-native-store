@@ -34,7 +34,8 @@ export default categoryStyle = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
         marginBottom: 20,
-        fontFamily:'Linn-Regular'
+        fontFamily:'Linn-Regular',
+        fontWeight:'300'
       }
 });
 
