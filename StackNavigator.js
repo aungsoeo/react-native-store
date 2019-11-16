@@ -40,7 +40,8 @@ const RouteConfigs = {
             headerTitleStyle:{
                 color:'white',
                 width:'80%',
-                textAlign:'center'
+                textAlign:'center',
+                fontFamily: "Linn-Regular"
             },
             headerTintColor:"white"
         }) 
@@ -61,7 +62,8 @@ const RouteConfigs = {
             headerTitleStyle:{
                 color:'white',
                 width:'80%',
-                textAlign:'center'
+                textAlign:'center',
+                fontFamily: "Linn-Regular"
                 
             },
             headerTintColor:"white"

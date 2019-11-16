@@ -34,7 +34,7 @@ export default detailStyle = StyleSheet.create({
   mapBtn: {
     backgroundColor: "#3af",
     borderStyle: "solid",
-    width: "50%",
+    width: "100%",
     borderRadius: 5
   },
   btnText: {

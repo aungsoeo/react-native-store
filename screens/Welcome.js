@@ -1,31 +1,13 @@
 import React from "react";
 import { View, Text, Image ,TouchableOpacity,ActivityIndicator } from "react-native";
-import * as Font from 'expo-font';
 
 //import external style sheet
 import welcomeStyle from "../styles/WelcomeStyle";
 
 export default class Welcome extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      fontLoaded : false
-    }
-  }
-
-  async componentDidMount(){
-    await Font.loadAsync({
-      "Pyidaungsu-Bold": require('../assets/fonts/pyidaungsu/Pyidaungsu-Bold.ttf'),
-      "Pyidaungsu-Regular": require('../assets/fonts/pyidaungsu/Pyidaungsu-Regular.ttf'),
-    });
-
-    //this.setState will wait until font loadAsync done with await keyword
-    this.setState({ fontLoaded: true})
-  }
 
   render() {
     const { navigate } = this.props.navigation;
-    if(this.state.fontLoaded){
       return (
         <View style={welcomeStyle.container}>
           <View style={{ flex:1}}></View>
@@ -57,13 +39,6 @@ export default class Welcome extends React.Component {
         
         </View>
       );
-    }else{
-      return (
-        <View style={welcomeStyle.container}>
-          <ActivityIndicator size="large"/>
-        </View>
-      );
-    }
   }
 }
 

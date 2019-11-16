@@ -7,7 +7,6 @@ import {
   ActivityIndicator,
   FlatList
 } from "react-native";
-import * as Font from "expo-font";
 
 import listItemStyle from "../styles/ListItemStyle";
 
@@ -290,6 +289,7 @@ export default class ItemList extends React.Component {
         color: "white",
         width: "80%",
         textAlign: "center",
+        fontFamily: "Linn-Regular"
       },
       headerTintColor: "white"
     };
@@ -299,44 +299,36 @@ export default class ItemList extends React.Component {
     super(props);
     this.state = {
       productListArr: [],
-      fontLoaded: false
     };
   }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      "Linn-Light": require("../assets/fonts/linn/Linn-Caracas-Light.otf"),
-      "Linn-Medium": require("../assets/fonts/linn/Linn-Caracas-Medium.otf"),
-      "Linn-Regular": require("../assets/fonts/linn/Linn-Caracas.otf")
-    });
-
+  componentDidMount() {
 
     //api fetch data will go here
     
 
     if (this.props.navigation.getParam("catId") == 1) {
       this.setState({
-        fontLoaded: true,
         productListArr: apple
       });
     }else if(this.props.navigation.getParam("catId") == 2){
         this.setState({
-            fontLoaded: true,
+  
             productListArr: samsung
           });
     }else if(this.props.navigation.getParam("catId") == 3){
         this.setState({
-            fontLoaded: true,
+  
             productListArr: huawei
           });
     }else if(this.props.navigation.getParam("catId") == 4){
         this.setState({
-            fontLoaded: true,
+  
             productListArr: xiaomi
           });
     }else{
         this.setState({
-            fontLoaded: true,
+  
             productListArr:[]
         })
     }
@@ -360,9 +352,6 @@ export default class ItemList extends React.Component {
     const { navigation } = this.props;
     const { navigate } = this.props.navigation;
     var arrlen = this.state.productListArr.length;
-    console.log(arrlen);
-    
-    if (this.state.fontLoaded) {
       return (
         <View style={listItemStyle.MainContainer}>
           <FlatList
@@ -396,12 +385,5 @@ export default class ItemList extends React.Component {
           />
         </View>
       );
-    } else {
-      return (
-        <View style={listItemStyle.container}>
-          <ActivityIndicator size="large" />
-        </View>
-      );
-    }
   }
 }
